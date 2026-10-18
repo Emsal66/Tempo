@@ -44,7 +44,7 @@ Plans:
 
 - [ ] 01-01-PLAN.md — Dev-env script, Cargo workspace, mornfold-core foundation (schema, DB, settings, shared contract types)
 - [ ] 01-02-PLAN.md — UI scaffold (React/Vite/Tailwind/Biome/Vitest) + full Turkish i18n catalog and guards
-- [ ] 01-03-PLAN.md — ADRs (distribution channel D-01, Phase 1 defaults), smoke checklist S-0..S-11, original ping + icons
+- [x] 01-03-PLAN.md — ADRs (distribution channel D-01, Phase 1 defaults), smoke checklist S-0..S-11, original ping + icons
 - [ ] 01-04-PLAN.md — Owner steps: Smart App Control check, updater key generation + backups, public key recorded
 
 **Wave 2** *(blocked on Wave 1 completion)*
@@ -211,7 +211,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Windows Kabuğu ve Platform Altyapısı | 0/19 | Planned | - |
+| 1. Windows Kabuğu ve Platform Altyapısı | 1/19 | In Progress|  |
 | 2. Tasarım Sistemi ve Kart Kütüphanesi | 0/TBD | Not started | - |
 | 3. Bağlantı Altyapısı, Bildirim Hattı ve API Kartları | 0/TBD | Not started | - |
 | 4. Google Bağlayıcısı ve Günün Özeti Ana Ekranı | 0/TBD | Not started | - |
