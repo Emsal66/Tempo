@@ -407,7 +407,7 @@ secrets(id TEXT PK, name TEXT UNIQUE NOT NULL, ciphertext BLOB NOT NULL, nonce B
   - `secrets_list() -> Vec<SecretMeta{id,name,masked_hint,updated_at}>`
   - `secrets_set(name, value) -> SecretMeta`
   - `secrets_delete(id)`
-  - `secrets_test(kind, value) -> TestResult` (D-17; Phase 1 has no known providers, so it returns `NotTestable` for generic keys)
+  - `secrets_test(kind, value) -> TestResult` (D-17; per the owner's amendment of D-17, Phase 1 tests recognised providers (Anthropic, Gemini, OpenRouter, OpenAI, GitHub, Slack) through the core `ProviderTester`; keys of unknown providers return `NotTestable` without any network call)
   - **No `get` command exists.** A test asserts that `bindings.ts` exports no command that returns a secret value.
 - Masking (in core, stored as `masked_hint` at write time): keep a known prefix (`sk-ant-`, `sk-or-v1-`, `sk-or-`, `sk-`, `AIza`, `ghp_`, `xoxb-`), then `••••`, then the last 4 characters. If the value is shorter than 12 chars, show `••••` plus the last 2. Never reveal more than 4 trailing characters.
 - Secrets in memory: wrap in `SecretString` immediately after deserialization and zeroize buffers. The UI clears its input state after submit, uses `type="password" autoComplete="off" spellCheck={false}`, and never caches the value in React Query or zustand.
@@ -650,9 +650,9 @@ Decide `identifier`, `productName` ("Mornfold") and the credential service/user 
 2. **"Yarına kadar" semantics (D-13).** Recommend next local midnight, with the exact resume time shown in the tray (A9). Planner may confirm with the owner in a checkpoint.
    - **RESOLVED:** next local midnight, recorded in ADR 0002 (Plan 01-03).
 3. **Which toast sound strategy becomes the default?** Decided by smoke test item S-7 (A2/A3).
-   - **RESOLVED:** both strategies ship behind a setting; Plan 01-16 sets the default from S-7.
+   - **RESOLVED:** both strategies ship behind a setting; Plan 01-18 sets the default from S-7.
 4. **Is the stub ToastActivatorCLSID needed for Notification Center persistence?** Ship without it. Add it if smoke item S-6 (click from Notification Center after the app has exited) fails.
-   - **RESOLVED:** decided by S-6b in Plan 01-16; failure routes to `/gsd:plan-phase 1 --gaps`.
+   - **RESOLVED:** decided by S-6b in Plan 01-18; failure routes to `/gsd:plan-phase 1 --gaps`.
 5. **Version source of truth.** Recommend that `src-tauri/Cargo.toml` `package.version` is the single source (omit `version` in `tauri.conf.json`). The release workflow asserts `v${version} == tag`. `package.json` version is ignored.
    - **RESOLVED:** `src-tauri/Cargo.toml` is the source of truth with a tag check in the release workflow, recorded in ADR 0001.
 
