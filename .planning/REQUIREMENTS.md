@@ -151,12 +151,75 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
+| SHELL-01 | Phase 1 | Pending |
+| SHELL-02 | Phase 1 | Pending |
+| SHELL-03 | Phase 1 | Pending |
+| SHELL-04 | Phase 1 | Pending |
+| SHELL-05 | Phase 1 | Pending |
+| SHELL-06 | Phase 1 | Pending |
+| SHELL-07 | Phase 1 | Pending |
+| SHELL-08 | Phase 1 | Pending |
+| SHELL-09 | Phase 1 | Pending |
+| DSGN-01 | Phase 2 | Pending |
+| DSGN-02 | Phase 2 | Pending |
+| DSGN-03 | Phase 2 | Pending |
+| DSGN-04 | Phase 2 | Pending |
+| DSGN-05 | Phase 2 | Pending |
+| DSGN-06 | Phase 2 | Pending |
+| CONN-01 | Phase 3 | Pending |
+| CONN-02 | Phase 3 | Pending |
+| CONN-03 | Phase 3 | Pending |
+| CONN-04 | Phase 3 | Pending |
+| CONN-05 | Phase 3 | Pending |
+| CONN-06 | Phase 3 | Pending |
+| CARD-01 | Phase 3 | Pending |
+| CARD-02 | Phase 3 | Pending |
+| CARD-03 | Phase 3 | Pending |
+| CARD-04 | Phase 3 | Pending |
+| GOOG-01 | Phase 4 | Pending |
+| GOOG-02 | Phase 4 | Pending |
+| GOOG-03 | Phase 4 | Pending |
+| GOOG-04 | Phase 4 | Pending |
+| GOOG-05 | Phase 4 | Pending |
+| GOOG-06 | Phase 4 | Pending |
+| GOOG-07 | Phase 4 | Pending |
+| AI-01 | Phase 5 | Pending |
+| AI-02 | Phase 5 | Pending |
+| AI-03 | Phase 5 | Pending |
+| AI-04 | Phase 5 | Pending |
+| AI-05 | Phase 5 | Pending |
+| AI-06 | Phase 5 | Pending |
+| AI-07 | Phase 5 | Pending |
+| AI-08 | Phase 5 | Pending |
+| AI-09 | Phase 6 | Pending |
+| AI-10 | Phase 5 | Pending |
+| ACT-01 | Phase 6 | Pending |
+| ACT-02 | Phase 6 | Pending |
+| ACT-03 | Phase 6 | Pending |
+| ACT-04 | Phase 6 | Pending |
+| ACT-05 | Phase 6 | Pending |
+| ACT-06 | Phase 6 | Pending |
+| WEB-01 | Phase 7 | Pending |
+| WEB-02 | Phase 7 | Pending |
+| WEB-03 | Phase 7 | Pending |
+| WEB-04 | Phase 7 | Pending |
+| WEB-05 | Phase 7 | Pending |
+| WEB-06 | Phase 7 | Pending |
+| MCP-01 | Phase 8 | Pending |
+| MCP-02 | Phase 8 | Pending |
+| MCP-03 | Phase 8 | Pending |
+| MCP-04 | Phase 8 | Pending |
+| MCP-05 | Phase 8 | Pending |
+| MCP-06 | Phase 8 | Pending |
+| MCP-07 | Phase 8 | Pending |
+| ONBD-01 | Phase 8 | Pending |
+| ONBD-02 | Phase 8 | Pending |
 
 **Coverage:**
 - v1 requirements: 63 total
-- Mapped to phases: 0
-- Unmapped: 63 ⚠️
+- Mapped to phases: 63
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-10-18*
-*Last updated: 2026-10-18 after initial definition*
+*Last updated: 2026-10-18 after roadmap creation*
