@@ -640,16 +640,21 @@ Decide `identifier`, `productName` ("Mornfold") and the credential service/user 
 | A10 | `Swatinem/rust-cache`, `pnpm/action-setup`, `actions/setup-node`, `dtolnay/rust-toolchain` are the actions to pin | CI | Low; standard community actions |
 | A11 | quick-xml/ulid/url/tempfile are legitimate (not scanned by slopcheck, long-established) | Audit | Very low |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Does Smart App Control block the unsigned installer on the owner's PC?**
    - Known: SAC blocks unsigned code outright when On.
    - Unclear: the owner's SAC state.
    - Recommendation: the first smoke-checklist item, asked before Plan 1 ships its artifact.
+   - **RESOLVED:** owner checks SAC state in Plan 01-04 Task 1 (smoke S-0).
 2. **"Yarına kadar" semantics (D-13).** Recommend next local midnight, with the exact resume time shown in the tray (A9). Planner may confirm with the owner in a checkpoint.
+   - **RESOLVED:** next local midnight, recorded in ADR 0002 (Plan 01-03).
 3. **Which toast sound strategy becomes the default?** Decided by smoke test item S-7 (A2/A3).
+   - **RESOLVED:** both strategies ship behind a setting; Plan 01-16 sets the default from S-7.
 4. **Is the stub ToastActivatorCLSID needed for Notification Center persistence?** Ship without it. Add it if smoke item S-6 (click from Notification Center after the app has exited) fails.
+   - **RESOLVED:** decided by S-6b in Plan 01-16; failure routes to `/gsd:plan-phase 1 --gaps`.
 5. **Version source of truth.** Recommend that `src-tauri/Cargo.toml` `package.version` is the single source (omit `version` in `tauri.conf.json`). The release workflow asserts `v${version} == tag`. `package.json` version is ignored.
+   - **RESOLVED:** `src-tauri/Cargo.toml` is the source of truth with a tag check in the release workflow, recorded in ADR 0001.
 
 ## Environment Availability
 
