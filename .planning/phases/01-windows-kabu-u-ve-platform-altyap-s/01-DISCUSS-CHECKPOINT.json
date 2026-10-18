@@ -86,7 +86,7 @@
       },
       {
         "question": "Bildirim sesi",
-        "answer": "Özel Mornfold sesi (detaylar kullanıcıyla netleştiriliyor)",
+        "answer": "Özel Mornfold sesi; referans: Discord bildirim sesi karakteri (kısa, yumuşak, tanınabilir 'ping'). Discord'un sesi birebir kopyalanmaz (telif) — benzer hissi veren özgün bir ses üretilir/lisanslanır",
         "options_presented": [
           "Sessiz varsayılan",
           "Windows varsayılanı",
