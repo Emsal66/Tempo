@@ -1,15 +1,14 @@
 {
   "phase": "1",
   "phase_name": "Windows Kabuğu ve Platform Altyapısı",
-  "timestamp": "2026-10-18T01:30:00Z",
+  "timestamp": "2026-10-18T01:50:00Z",
   "areas_completed": [
     "Dağıtım ve güncelleme",
-    "Faz 1 penceresi ve bildirim"
-  ],
-  "areas_remaining": [
+    "Faz 1 penceresi ve bildirim",
     "Tepsi ve arka plan",
     "Anahtar kasası deneyimi"
   ],
+  "areas_remaining": [],
   "decisions": {
     "Dağıtım ve güncelleme": [
       {
@@ -91,6 +90,83 @@
           "Sessiz varsayılan",
           "Windows varsayılanı",
           "Özel Mornfold sesi"
+        ]
+      },
+      {
+        "question": "Ses hangi bildirimlerde çalsın",
+        "answer": "Hepsinde; Ayarlar'dan tamamen veya servis bazında kapatılabilir; sessiz saatlerde çalmaz",
+        "options_presented": [
+          "Hepsinde, kapatılabilir",
+          "Sadece önemlilerde"
+        ]
+      }
+    ],
+    "Tepsi ve arka plan": [
+      {
+        "question": "Tepsi ikonuna sol tık",
+        "answer": "Sol tık pencereyi açar/gizler; sağ tık menü (Aç / Tümünü duraklat / Çık) — Discord gibi",
+        "options_presented": [
+          "Pencereyi aç/gizle",
+          "Menü açılsın"
+        ]
+      },
+      {
+        "question": "Tepsi ikonu durum göstersin mi",
+        "answer": "Okunmamış bildirim rozeti; duraklatıldığında/hata olduğunda ikon soluk/farklı görünür",
+        "options_presented": [
+          "Rozet + durum",
+          "Sade ikon"
+        ]
+      },
+      {
+        "question": "Tümünü duraklat davranışı",
+        "answer": "Süre seçmeli: 1 saat / Yarına kadar / Ben açana kadar (Discord 'rahatsız etme' gibi)",
+        "options_presented": [
+          "Süre seçmeli",
+          "Aç/kapa"
+        ]
+      },
+      {
+        "question": "X düğmesi ilk kapatma",
+        "answer": "Sessizce tepsiye iner, bilgi bildirimi yok",
+        "options_presented": [
+          "Tepsiye in + bir kez bilgi ver",
+          "Sessizce tepsiye in",
+          "Ayarlardan seçilsin"
+        ]
+      }
+    ],
+    "Anahtar kasası deneyimi": [
+      {
+        "question": "Kayıtlı anahtar görünümü",
+        "answer": "Maskeli + son 4 hane (örn. 'sk-ant-••••a1b2'); değiştir / sil / test et butonları",
+        "options_presented": [
+          "Maskeli + son 4 hane",
+          "Sadece 'Kayıtlı ✓'"
+        ]
+      },
+      {
+        "question": "Değiştirme/silmede ek doğrulama",
+        "answer": "Gerek yok; Windows oturumu açıkken doğrudan değiştirilebilir",
+        "options_presented": [
+          "Windows Hello",
+          "Gerek yok"
+        ]
+      },
+      {
+        "question": "Anahtar girildiğinde",
+        "answer": "Kaydetmeden önce test isteği, geçersizse uyar (test yalnızca sağlayıcısı bilinen anahtarlar için; genel anahtarlarda test atlanabilir)",
+        "options_presented": [
+          "Test et, sonra kaydet",
+          "Direkt kaydet"
+        ]
+      },
+      {
+        "question": "Faz 1 kasa kapsamı",
+        "answer": "Ayarlar'da genel 'Anahtarlar' bölümü: ad + değer ekle/sil/test; AI sağlayıcı alanları Faz 5'te buraya bağlanır",
+        "options_presented": [
+          "Genel kasa ekranı",
+          "Sadece AI anahtarları"
         ]
       }
     ]
