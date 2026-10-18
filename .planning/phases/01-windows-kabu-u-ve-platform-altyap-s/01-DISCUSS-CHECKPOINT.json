@@ -1,0 +1,108 @@
+{
+  "phase": "1",
+  "phase_name": "Windows Kabuğu ve Platform Altyapısı",
+  "timestamp": "2026-10-18T01:30:00Z",
+  "areas_completed": [
+    "Dağıtım ve güncelleme",
+    "Faz 1 penceresi ve bildirim"
+  ],
+  "areas_remaining": [
+    "Tepsi ve arka plan",
+    "Anahtar kasası deneyimi"
+  ],
+  "decisions": {
+    "Dağıtım ve güncelleme": [
+      {
+        "question": "Dağıtım kanalı",
+        "answer": "NSIS + GitHub Releases (tauri-plugin-updater); Store v2'de yeniden değerlendirilir",
+        "options_presented": [
+          "NSIS + GitHub güncelleyici",
+          "Microsoft Store (MSIX)",
+          "Sen karar ver"
+        ]
+      },
+      {
+        "question": "Yeni sürüm davranışı",
+        "answer": "Arka planda indir, sonra 'yeniden başlat' diye sor (bildirim + tepsi menüsü)",
+        "options_presented": [
+          "İndir, sonra sor",
+          "Sessizce kur",
+          "Sadece elle denetle"
+        ]
+      },
+      {
+        "question": "Yayın yeri",
+        "answer": "Bu repo (emsal66/tempo) herkese açık; GitHub Releases doğrudan burada",
+        "options_presented": [
+          "Ayrı açık sürüm reposu",
+          "Bu repo zaten açık",
+          "Sen karar ver"
+        ]
+      },
+      {
+        "question": "Sürüm tetikleyicisi",
+        "answer": "Her push'ta CI artifact; gerçek sürüm yalnızca v0.x.y etiketiyle",
+        "options_presented": [
+          "Etiketle, elle",
+          "Her main push'u"
+        ]
+      },
+      {
+        "question": "İmza anahtarı yedeği",
+        "answer": "Şifre yöneticisi + çevrimdışı USB + CI secret",
+        "options_presented": [
+          "Şifre yöneticisi + USB",
+          "Sadece şifre yöneticisi",
+          "Sonra karar veririm"
+        ]
+      }
+    ],
+    "Faz 1 penceresi ve bildirim": [
+      {
+        "question": "Faz 1 sonunda pencerede ne görünsün",
+        "answer": "Sade iskelet: Mica cam arka plan + özel başlık çubuğu + Mornfold logosu + sistem durumu (son kontrol, sürüm) + Ayarlar; Faz 2'de gerçek pano gelir",
+        "options_presented": [
+          "Sade iskelet",
+          "Sadece ayarlar ekranı",
+          "Sen karar ver"
+        ]
+      },
+      {
+        "question": "Elle başlatıldığında açılış davranışı",
+        "answer": "Pencere açılır; Windows açılışında otomatik başlayınca sadece tepsiye iner",
+        "options_presented": [
+          "Pencere açılır",
+          "Her zaman tepsiye",
+          "Mini panel"
+        ]
+      },
+      {
+        "question": "Windows bildirim stili",
+        "answer": "Butonlu: tıklayınca ilgili ekran açılır + 1-2 hızlı buton (Aç, Sessize al); uygulama kapalıyken de tıklama çalışır",
+        "options_presented": [
+          "Butonlu",
+          "Sade"
+        ]
+      },
+      {
+        "question": "Bildirim sesi",
+        "answer": "Özel Mornfold sesi (detaylar kullanıcıyla netleştiriliyor)",
+        "options_presented": [
+          "Sessiz varsayılan",
+          "Windows varsayılanı",
+          "Özel Mornfold sesi"
+        ]
+      }
+    ]
+  },
+  "deferred_ideas": [],
+  "canonical_refs": [
+    ".planning/ROADMAP.md",
+    ".planning/REQUIREMENTS.md",
+    ".planning/PROJECT.md",
+    ".planning/research/SUMMARY.md",
+    ".planning/research/PITFALLS.md",
+    ".planning/research/ARCHITECTURE.md",
+    ".planning/research/STACK.md"
+  ]
+}
