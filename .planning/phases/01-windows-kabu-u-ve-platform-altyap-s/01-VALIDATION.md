@@ -83,7 +83,7 @@ Task-level map. Task ID = `<plan>-T<task number>`; see each PLAN.md for full acc
 | 01-17-T2 | 01-17 | 8 | SHELL-09 (D-06) | T-01-17-03 | N/A | component + CI | `pnpm -C ui exec vitest run src/test/status-update.test.tsx && bash scripts/ci-wait.sh` | ❌ | ⬜ pending |
 | 01-18-T1 | 01-18 | 9 | SHELL-01, SHELL-09 | T-01-18-01/02/05 | full suite + green CI on tagged commit; draft release | release check | `gh release view v0.1.0 --repo Emsal66/Tempo --json isDraft,assets` | ❌ | ⬜ pending |
 | 01-18-T2 | 01-18 | 9 | SHELL-01..SHELL-08 | T-01-18-04 | act link from browser refused (S-6d) | manual (owner, CI artifact) | Smoke S-0..S-9 | n/a | ⬜ pending |
-| 01-18-T3 | 01-18 | 9 | SHELL-05 (D-09) | T-01-18-03 | results recorded verbatim | unit + doc grep | `grep -q "Ses stratejisi sonucu: [AB]" docs/smoke-test-phase1.md && cargo test -p mornfold-core --test notifications` | ❌ | ⬜ pending |
+| 01-18-T3 | 01-18 | 9 | SHELL-05 (D-09) | T-01-18-03 | results recorded verbatim | unit + doc grep | `grep -Eq "^Ses stratejisi sonucu: (A|B)( |$)" docs/smoke-test-phase1.md && ! grep -q "____" docs/smoke-test-phase1.md && cargo test -p mornfold-core --test notifications` | ❌ | ⬜ pending |
 | 01-19-T1 | 01-19 | 10 | SHELL-09 | T-01-19-03 | tag==version; draft until owner publishes | release check | `gh release view v0.2.0 --repo Emsal66/Tempo --json assets` | ❌ | ⬜ pending |
 | 01-19-T2 | 01-19 | 10 | SHELL-09 (D-02, D-05) | T-01-19-01/02 | signed update verified; backups exist | manual (owner, v0.1.0 release installer) | Smoke S-10, S-11 | n/a | ⬜ pending |
 | 01-19-T3 | 01-19 | 10 | SHELL-09 | T-01-19-04 | approval dated | doc grep | `grep -q "nyquist_compliant: true" .planning/phases/01-windows-kabu-u-ve-platform-altyap-s/01-VALIDATION.md` | ❌ | ⬜ pending |
