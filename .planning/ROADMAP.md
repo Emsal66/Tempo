@@ -33,7 +33,26 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Kurulu sürümden gönderilen bir test bildirimi Mornfold adı ve ikonuyla görünür ve tıklanınca uygulamada ilgili ekranı açar; bilgisayar uykudan uyandığında kaçırılan kontroller bir kez, sırayla çalışır ve tepside "son kontrol: X dk önce" satırı görünür
   4. Kullanıcının girdiği bir API anahtarı yeniden başlatmadan sonra da kullanılabilir, Windows Kimlik Bilgisi Yöneticisi'ne bağlı kasada şifreli durur, arayüzden geri okunamaz ve log dosyalarında görünmez; tüm arayüz metinleri Türkçe ve i18n altyapısından gelir
   5. Kullanıcı v0.1'den v0.2'ye uygulama içinden imzalı güncelleme alabilir; dağıtım kanalı kararı yazılı olarak alınmış ve güncelleme imza anahtarı yedeklenmiştir
-**Plans**: TBD
+**Plans**: 17 plans (9 waves)
+
+Plans:
+- [ ] 01-01-PLAN.md — Dev-env script, Cargo workspace, mornfold-core foundation (schema, DB, settings, shared contract types)
+- [ ] 01-02-PLAN.md — UI scaffold (React/Vite/Tailwind/Biome/Vitest) + full Turkish i18n catalog and guards
+- [ ] 01-03-PLAN.md — ADRs (distribution channel D-01, Phase 1 defaults), smoke checklist S-0..S-11, original ping + icons
+- [ ] 01-04-PLAN.md — Owner steps: Smart App Control check, updater key generation + backups, public key recorded
+- [ ] 01-05-PLAN.md — Core scheduler with sleep catch-up, gap detection, crash isolation + pause durations
+- [ ] 01-06-PLAN.md — Core envelope-encrypted vault (AES-GCM, KCV, providers) + masking/redaction + canary test
+- [ ] 01-07-PLAN.md — Core toast XML builder, mornfold:// allowlist, single-use action tokens, sound policy
+- [ ] 01-08-PLAN.md — Core i18n catalog over tr.json, relative-time labels, tray model (menu/tooltip/icon)
+- [ ] 01-09-PLAN.md — Tauri shell skeleton: config (Mica, NSIS, scheme, CSP), single instance, close-to-tray, autostart, bindings
+- [ ] 01-10-PLAN.md — CI: Linux suite + Windows build/test/startup smoke/NSIS artifact, driven to green
+- [ ] 01-11-PLAN.md — UI window skeleton: title bar, Durum/Ayarlar, Genel (autostart, logs)
+- [ ] 01-12-PLAN.md — Vault in the shell: Credential Manager store, write-only secrets IPC, log redaction, Anahtarlar UI
+- [ ] 01-13-PLAN.md — Tray + background runtime: scheduler, power resume, pause menu, live Durum
+- [ ] 01-14-PLAN.md — WinRT toasts with buttons and sound, mornfold:// activation (warm/cold), Bildirimler UI
+- [ ] 01-15-PLAN.md — Signed updater: config gate, tag release workflow, download-then-ask flow, Güncellemeler UI
+- [ ] 01-16-PLAN.md — v0.1.0 release + owner smoke S-0..S-9 on Windows 11
+- [ ] 01-17-PLAN.md — v0.2.0 in-app update (S-10), key backups (S-11), validation sign-off
 
 ### Phase 2: Tasarım Sistemi ve Kart Kütüphanesi
 **Goal**: Uygulama açıldığında "hayran bırakan" Apple / Linear tarzı arayüz görünür ve sonraki tüm servislerin kullanacağı sabit kart kütüphanesi, ızgara, detay paneli ve komut paleti örnek (fixture) verilerle çalışır
@@ -132,7 +151,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Windows Kabuğu ve Platform Altyapısı | 0/TBD | Not started | - |
+| 1. Windows Kabuğu ve Platform Altyapısı | 0/17 | Planned | - |
 | 2. Tasarım Sistemi ve Kart Kütüphanesi | 0/TBD | Not started | - |
 | 3. Bağlantı Altyapısı, Bildirim Hattı ve API Kartları | 0/TBD | Not started | - |
 | 4. Google Bağlayıcısı ve Günün Özeti Ana Ekranı | 0/TBD | Not started | - |

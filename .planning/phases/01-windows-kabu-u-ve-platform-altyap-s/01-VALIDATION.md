@@ -37,19 +37,37 @@ created: 2026-10-18
 
 ## Per-Task Verification Map
 
-Requirement-level map from RESEARCH.md §Validation Architecture. Task IDs are filled in once PLAN.md files exist.
+Task-level map. Task ID = `<plan>-T<task number>`; see each PLAN.md for full acceptance criteria.
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| TBD | TBD | — | SHELL-01 | — | N/A | CI | windows job `pnpm tauri build --bundles nsis` + upload-artifact; check-runs success | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-02 | — | N/A | unit (insta) | `cargo test -p mornfold-core tray_model` / `pause` | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-03 | — | N/A | unit | `cargo test -p mornfold-core startup_args` | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-04 | Second-instance argv injection | argv parsed by allowlist, unknown flags ignored | unit + manual | `cargo test -p mornfold-core deeplink`; Smoke S-5 | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-05 | Toast XML injection; `mornfold://act/*` abuse | quick-xml escaping; act links need single-use notification token | unit (insta + adversarial) | `cargo test -p mornfold-core toast_xml` / `deeplink`; `cargo test -p mornfold-app toast_loadxml` (Windows CI) | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-06 | — | panicking job → failed status, loop survives | unit (fake clock + temp DB) | `cargo test -p mornfold-core scheduler` / `relative_time` | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-07 | Secret exfiltration via UI/logs; row swap; key loss | no read command; AAD binding; KCV; redaction; canary | unit + integration | `cargo test -p mornfold-core vault` / `masking` / `canary_no_plaintext`; `pnpm -C ui vitest run bindings.contract` | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-08 | — | N/A | unit | `pnpm -C ui vitest run i18n`; `cargo test -p mornfold-core i18n` | ❌ W0 | ⬜ pending |
-| TBD | TBD | — | SHELL-09 | Malicious update / CI secret theft | mandatory minisign pubkey; secret only in tag release job | unit/script | `node scripts/check-release-config.mjs` or `cargo test -p mornfold-core release_config` | ❌ W0 | ⬜ pending |
+| 01-01-T2 | 01-01 | 1 | (Wave 0 env) | T-01-01-04 | settings.json untouched | script | `bash scripts/dev-setup.sh --check` | ❌ W0 | ⬜ pending |
+| 01-01-T3 | 01-01 | 1 | SHELL-06, SHELL-07 | T-01-01-01/02 | static SQL only; MasterKey Debug redacted | unit | `cargo test -p mornfold-core --test foundation` | ❌ W0 | ⬜ pending |
+| 01-02-T3 | 01-02 | 1 | SHELL-08 | — | N/A | unit (Vitest) | `pnpm -C ui exec vitest run src/test/i18n.test.ts` | ❌ W0 | ⬜ pending |
+| 01-03-T3 | 01-03 | 1 | SHELL-05 (D-09), SHELL-02 (D-12) | T-01-03-02 | reproducible assets | script | `python3 -I scripts/gen-ping.py --check src-tauri/resources/sounds/mornfold-ping.wav` | ❌ W0 | ⬜ pending |
+| 01-04-T3 | 01-04 | 1 | SHELL-09 (D-05) | T-01-04-01 | no private key in repo | script | `base64 -d docs/release/updater-pubkey.txt \| head -1 \| grep -q "minisign public key"` | ❌ | ⬜ pending |
+| 01-05-T1 | 01-05 | 2 | SHELL-02 (D-13) | — | N/A | unit | `cargo test -p mornfold-core --test pause` | ❌ | ⬜ pending |
+| 01-05-T2 | 01-05 | 2 | SHELL-06 | T-01-05-01/02 | panicking job → failed, loop survives; no resume burst | unit (fake clock + temp DB) | `cargo test -p mornfold-core --test scheduler` | ❌ | ⬜ pending |
+| 01-06-T1 | 01-06 | 2 | SHELL-07 (D-15) | T-01-06-04 | masked hint ≤4 trailing chars; log redaction | unit | `cargo test -p mornfold-core --test masking` | ❌ | ⬜ pending |
+| 01-06-T2 | 01-06 | 2 | SHELL-07 (D-16..D-18) | T-01-06-01..06 | AAD row binding; KCV; no silent key regen; canary absent from DB/WAL/logs | unit + integration | `cargo test -p mornfold-core --test vault --test canary` | ❌ | ⬜ pending |
+| 01-07-T1 | 01-07 | 2 | SHELL-05 (D-08) | T-01-07-01..03 | quick-xml escaping; deep-link allowlist | unit (insta + adversarial) | `cargo test -p mornfold-core --test deeplink --test toast_xml` | ❌ | ⬜ pending |
+| 01-07-T2 | 01-07 | 2 | SHELL-05 (D-09, D-10) | T-01-07-01/04 | act links need single-use token < 7 days | unit | `cargo test -p mornfold-core --test notifications` | ❌ | ⬜ pending |
+| 01-08-T1 | 01-08 | 2 | SHELL-06, SHELL-08 | T-01-08-01 | N/A | unit | `cargo test -p mornfold-core --test i18n --test relative_time` | ❌ | ⬜ pending |
+| 01-08-T2 | 01-08 | 2 | SHELL-02 (D-11..D-13) | T-01-08-03 | unknown menu ids ignored | unit (insta) | `cargo test -p mornfold-core --test tray_model` | ❌ | ⬜ pending |
+| 01-09-T1 | 01-09 | 2 | SHELL-03, SHELL-04, SHELL-01 | T-01-09-01/02/03 | argv allowlist; minimal capabilities; strict CSP | unit + config assert | `cargo test -p mornfold-core --test startup_args` | ❌ | ⬜ pending |
+| 01-09-T2 | 01-09 | 2 | SHELL-02 (D-14), SHELL-04 | T-01-09-04 | no Webview log target | build + bindings drift | `cargo test -p mornfold-app --test bindings && cargo xwin check --target x86_64-pc-windows-msvc -p mornfold-app` | ❌ | ⬜ pending |
+| 01-10-T2 | 01-10 | 3 | SHELL-01 | T-01-10-01..04 | no secrets in push CI; SHA-pinned actions | CI | check-runs `linux` + `windows` = success (NSIS artifact + startup smoke) | ❌ W0 | ⬜ pending |
+| 01-11-T2 | 01-11 | 3 | SHELL-03, SHELL-08 | T-01-11-01 | N/A | component (Vitest) | `pnpm -C ui exec vitest run` | ❌ | ⬜ pending |
+| 01-12-T1 | 01-12 | 4 | SHELL-07 | T-01-12-02/04 | redacting log formatter; CredMan persistence=Local | unit + Windows CI | `cargo test -p mornfold-app logging_` (+ `credman_roundtrip` on windows-2025) | ❌ | ⬜ pending |
+| 01-12-T2 | 01-12 | 4 | SHELL-07 (D-15..D-17) | T-01-12-01/03 | no secret-returning command; value never cached | unit (Vitest) | `pnpm -C ui exec vitest run src/test/keys.test.tsx src/test/bindings.contract.test.ts` | ❌ | ⬜ pending |
+| 01-13-T1 | 01-13 | 5 | SHELL-06 | T-01-13-01/02 | power callback send-only; unregister on drop | build (xwin) | `cargo xwin check --target x86_64-pc-windows-msvc -p mornfold-app` | ❌ | ⬜ pending |
+| 01-13-T3 | 01-13 | 5 | SHELL-02, SHELL-06 | — | N/A | component (Vitest) | `pnpm -C ui exec vitest run src/test/status.test.tsx` | ❌ | ⬜ pending |
+| 01-14-T1 | 01-14 | 6 | SHELL-05 | T-01-14-02/03 | adversarial XML loads with exactly 2 actions in WinRT | Windows CI unit | `cargo test -p mornfold-app --test toast_loadxml` (windows-2025) | ❌ | ⬜ pending |
+| 01-14-T3 | 01-14 | 6 | SHELL-05 (D-08..D-10) | T-01-14-01 | N/A | component (Vitest) | `pnpm -C ui exec vitest run src/test/notifications.test.tsx src/test/navigate.test.tsx` | ❌ | ⬜ pending |
+| 01-15-T1 | 01-15 | 7 | SHELL-09 | T-01-15-01/02/04 | pubkey pinned; secrets only in tag job; tag==version | script | `node scripts/check-release-config.mjs` | ❌ | ⬜ pending |
+| 01-15-T3 | 01-15 | 7 | SHELL-09 (D-02) | T-01-15-03 | install only on user action | component (Vitest) | `pnpm -C ui exec vitest run src/test/updates.test.tsx` | ❌ | ⬜ pending |
+| 01-16-T2 | 01-16 | 8 | SHELL-01..SHELL-08 | T-01-16-04 | act link from browser refused (S-6d) | manual | Smoke S-0..S-9 | ❌ | ⬜ pending |
+| 01-17-T2 | 01-17 | 9 | SHELL-09 (D-05) | T-01-17-01/02 | signed update verified; backups exist | manual | Smoke S-10, S-11 | ❌ | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
