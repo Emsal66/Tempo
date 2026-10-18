@@ -38,8 +38,6 @@ Dağınık servislerin hepsini tek, zarif bir ekranda toplayıp oradan yönetebi
 
 **Kapsamlı takip**
 - [ ] Web sitesi değişiklik takibi: bir sayfanın içeriği değişince bildirim (fiyat düştü, yeni ilan, duyuru)
-- [ ] Twitter/X: seçilen hesaplar yeni paylaşım yapınca bildirim
-- [ ] Twitter/X: kelime / hashtag / konu takibi
 - [ ] Ücretsiz API ekleme — hazır katalog (popüler ücretsiz API'ler tek tıkla) + özel API tanımlama (URL gir, gösterilecek alanı seç, karta dönüşsün)
 
 **Gizlilik**
@@ -49,7 +47,9 @@ Dağınık servislerin hepsini tek, zarif bir ekranda toplayıp oradan yönetebi
 
 - Bulut senkronizasyonu / sunucu tarafı — kullanıcı her şeyin yerel kalmasını istedi
 - Ortak/ekip kullanımı (paylaşımlı paneller) — "başkaları" kendi PC'lerinde ayrı ayrı kullanacak; paylaşımlı veri sunucu gerektirir
-- macOS / Linux sürümü — kullanıcı Windows kullanıyor; v1 sadece Windows
+- macOS / Linux sürümü ve Windows 10 — v1 yalnızca Windows 11
+- Twitter/X takibi v1'de yok (v2) — okuma başına ücretli (~$0,005/gönderi), kazıma yasak; araştırma sonrası ertelendi
+- Kod imzası, Google doğrulaması, gizlilik politikası (dağıtım sertleştirme) — v2; kanal kararı Faz 1'de
 - Mobil uygulama — asıl kullanım PC'de
 - Twitter/X'e uygulama içinden paylaşım yapma — kullanıcı sadece izleme istedi
 - Kendi X bildirimlerini (mention/DM) takip — kullanıcı seçmedi
@@ -67,7 +67,7 @@ Dağınık servislerin hepsini tek, zarif bir ekranda toplayıp oradan yönetebi
 
 ## Constraints
 
-- **Platform**: Windows 10/11 masaüstü — kullanıcının işletim sistemi
+- **Platform**: Yalnızca Windows 11 masaüstü — kullanıcının işletim sistemi; Mica cam efekti Windows 11'e özgü
 - **Gizlilik**: Veriler ve anahtarlar yalnızca yerel — kullanıcı tercihi; sunucu yok
 - **Tasarım**: Apple / Linear estetiği, "hayran bırakan zarafet" — ürünün ana farkı
 - **Genişletilebilirlik**: Yeni servis = yeni eklenti/MCP sunucusu, çekirdek koda dokunmadan
@@ -80,7 +80,10 @@ Dağınık servislerin hepsini tek, zarif bir ekranda toplayıp oradan yönetebi
 | İsim: Mornfold | Sabah özeti odaklı, özgün; alan adları ve aramada boş görünüyor (resmi marka sorgusu yapılmadı) | — Pending |
 | Karma eklenti modeli (yerleşik + MCP istemcisi) | Popüler servisler hızlı ve güvenilir; geri kalanı kod değişmeden eklenebilir | — Pending |
 | AI sağlayıcısı seçilebilir (Claude / Gemini / OpenRouter) | Kullanıcının birden fazla AI hesabı var; tek sağlayıcıya bağımlılık yok | — Pending |
-| Tüm takip özellikleri v1'de | Kullanıcı ilk sürümün ancak hepsiyle anlamlı olduğunu belirtti | — Pending |
+| Tüm takip özellikleri v1'de (X hariç) | Kullanıcı ilk sürümün ancak hepsiyle anlamlı olduğunu belirtti; X maliyet nedeniyle v2'ye ertelendi | — Pending |
+| Tauri 2 + Rust çekirdek + React arayüz | Küçük kurulum, düşük bellek, yerleşik Mica, resmi Rust MCP SDK; çekirdek Linux'ta test edilebilir | — Pending |
+| Yatay katmanlar yol haritası (8 faz) | Kullanıcı tercihi | — Pending |
+| AI özeti araç kullanamaz, her işlem kullanıcı onaylı | Prompt injection riski | — Pending |
 | Yalnızca yerel veri, Windows güvenli kasası | Kullanıcının gizlilik tercihi | — Pending |
 
 ## Evolution
@@ -101,4 +104,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-10-18 after initialization*
+*Last updated: 2026-10-18 after research and roadmap*
