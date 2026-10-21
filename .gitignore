@@ -1,0 +1,13 @@
+/target/
+node_modules/
+/ui/dist/
+# minisign private keys must never be committed (D-05)
+*.key
+*.key.pub.bak
+.env
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+/playwright-report/
+/test-results/
