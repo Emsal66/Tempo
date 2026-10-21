@@ -1,5 +1,182 @@
 {
   "app": {
     "name": "Mornfold"
+  },
+  "titlebar": {
+    "minimize": "Küçült",
+    "maximize": "Büyüt",
+    "restore": "Önceki boyut",
+    "close": "Kapat"
+  },
+  "nav": {
+    "status": "Durum",
+    "settings": "Ayarlar"
+  },
+  "status": {
+    "title": "Sistem durumu",
+    "lastCheck": "Son kontrol",
+    "never": "Henüz kontrol yapılmadı",
+    "version": "Sürüm",
+    "lastResume": "Son uyanma",
+    "catchUp": "Kaçırılan kontroller: {{count}} iş, sırayla çalıştı",
+    "health": {
+      "ok": "Her şey yolunda",
+      "degraded": "Bazı kontroller başarısız",
+      "error": "Arka plan kontrolleri durdu"
+    },
+    "runs": {
+      "title": "Son çalışmalar",
+      "empty": "Henüz çalışma yok",
+      "catchUp": "telafi",
+      "running": "Çalışıyor",
+      "ok": "Başarılı",
+      "failed": "Başarısız",
+      "timedOut": "Zaman aşımı"
+    }
+  },
+  "job": {
+    "heartbeat": "Sağlık kontrolü",
+    "demo_check": "Örnek kontrol",
+    "update_check": "Güncelleme denetimi"
+  },
+  "pause": {
+    "menu": "Tümünü duraklat",
+    "oneHour": "1 saat",
+    "untilTomorrow": "Yarına kadar",
+    "indefinite": "Ben açana kadar",
+    "resume": "Devam et",
+    "status": {
+      "until": "Duraklatıldı · devam: {{when}}",
+      "indefinite": "Duraklatıldı · siz açana kadar"
+    },
+    "when": {
+      "today": "bugün {{time}}",
+      "tomorrow": "yarın {{time}}",
+      "date": "{{date}} {{time}}"
+    }
+  },
+  "tray": {
+    "open": "Aç",
+    "quit": "Çık",
+    "restartUpdate": "Yeniden başlat ve güncelle",
+    "unread": "{{count}} okunmamış",
+    "error": "Arka plan hatası"
+  },
+  "time": {
+    "lastCheck": {
+      "never": "son kontrol: henüz yok",
+      "justNow": "son kontrol: az önce",
+      "minutes": "son kontrol: {{count}} dk önce",
+      "hours": "son kontrol: {{count}} sa önce",
+      "days": "son kontrol: {{count}} gün önce"
+    }
+  },
+  "toast": {
+    "test": {
+      "title": "Mornfold",
+      "body": "Test bildirimi: her şey çalışıyor."
+    },
+    "action": {
+      "open": "Aç",
+      "mute": "Sessize al",
+      "restart": "Yeniden başlat"
+    },
+    "update": {
+      "title": "Güncelleme hazır",
+      "body": "Mornfold {{version}} indirildi; yeniden başlatınca kurulacak."
+    }
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "general": {
+      "title": "Genel"
+    },
+    "autostart": {
+      "label": "Windows açılışında başlat",
+      "hint": "Açılışta pencere açılmaz, uygulama tepside bekler."
+    },
+    "logs": {
+      "open": "Log klasörünü aç"
+    },
+    "notifications": {
+      "title": "Bildirimler",
+      "test": "Test bildirimi gönder",
+      "sent": "Test bildirimi gönderildi"
+    },
+    "sound": {
+      "label": "Bildirim sesi",
+      "hint": "Her bildirimde kısa Mornfold sesi çalar.",
+      "strategy": {
+        "label": "Ses yöntemi",
+        "toast": "Windows bildirimiyle çal",
+        "app": "Uygulama kendisi çalsın"
+      },
+      "perSource": "Kaynak bazında ses",
+      "source": {
+        "system": "Sistem",
+        "updates": "Güncellemeler"
+      },
+      "muted": "Sessiz · bitiş: {{time}}",
+      "unmute": "Sesi şimdi aç"
+    },
+    "keys": {
+      "title": "Anahtarlar",
+      "empty": "Henüz kayıtlı anahtar yok.",
+      "name": "Ad",
+      "value": "Değer",
+      "add": "Anahtar ekle",
+      "save": "Kaydet",
+      "test": "Test et",
+      "change": "Değiştir",
+      "delete": "Sil",
+      "cancel": "Vazgeç",
+      "updated": "Güncellendi: {{when}}",
+      "notTestable": "Bu anahtarın sağlayıcısı tanınmadı; test atlandı.",
+      "testing": "Test ediliyor…",
+      "valid": "Anahtar geçerli ({{provider}})",
+      "invalid": "Anahtar geçersiz: {{provider}} bu anahtarı reddetti",
+      "unreachable": "Test yapılamadı: {{provider}} şu an yanıt vermiyor",
+      "saveAnyway": "Yine de kaydet",
+      "saved": "Anahtar kaydedildi",
+      "deleted": "Anahtar silindi",
+      "nameInvalid": "Ad 1–64 karakter olmalı ve kontrol karakteri içermemeli",
+      "valueInvalid": "Değer boş olamaz ve 8 KB'ı geçemez"
+    },
+    "updates": {
+      "title": "Güncellemeler",
+      "current": "Yüklü sürüm: {{version}}",
+      "check": "Güncellemeleri denetle",
+      "checking": "Denetleniyor…",
+      "downloading": "İndiriliyor…",
+      "upToDate": "Mornfold güncel",
+      "ready": "{{version}} hazır",
+      "install": "Yeniden başlat ve güncelle",
+      "failed": "Güncelleme denetlenemedi: {{message}}",
+      "idle": "Henüz denetlenmedi"
+    }
+  },
+  "vault": {
+    "keyLost": "Kasa anahtarı bulunamadı; kayıtlı anahtarları yeniden girmeniz gerekiyor.",
+    "keyMismatch": "Kasa anahtarı eşleşmiyor; kayıtlı anahtarlar çözülemiyor.",
+    "unavailable": "Windows Kimlik Bilgisi Yöneticisi'ne ulaşılamadı.",
+    "reset": "Kasayı sıfırla",
+    "resetConfirm": "Tüm kayıtlı anahtarlar silinecek. Devam edilsin mi?"
+  },
+  "providers": {
+    "anthropic": "Anthropic",
+    "gemini": "Google Gemini",
+    "openRouter": "OpenRouter",
+    "openAi": "OpenAI",
+    "gitHub": "GitHub",
+    "slack": "Slack"
+  },
+  "errors": {
+    "generic": "Bir şeyler ters gitti: {{message}}"
+  },
+  "common": {
+    "yes": "Evet",
+    "no": "Hayır",
+    "on": "Açık",
+    "off": "Kapalı"
   }
 }

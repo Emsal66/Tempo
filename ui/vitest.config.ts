@@ -8,5 +8,8 @@ export default defineConfig({
     setupFiles: ["./src/test/setup.ts"],
     include: ["src/**/*.test.{ts,tsx}"],
     restoreMocks: true,
+    // The persistent transform cache does not notice files added to an eager
+    // `import.meta.glob`, which would let the i18n source guard skip new files.
+    fsModuleCache: false,
   },
 });
